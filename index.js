@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 
 app.use((req, res, next) => {
     res.setHeader('Report-To', '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://13588727568c1c68ab7fa56e96ca7723.report-uri.com/a/d/g"}],"include_subdomains":true}');
-    res.setHeader('NEL','{"report_to":"default","max_age":31536000,"include_subdomains":true}');
+    res.setHeader('NEL','{"report_to":"default","max_age":31536000,"include_subdomains":true,"success_fraction": 1.0,"failure_fraction": 1.0}');
 
     next();
 });

@@ -14,9 +14,14 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/drop', function(req, res) {
+    req.socket.end();
+});
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
